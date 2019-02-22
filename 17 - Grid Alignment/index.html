@@ -54,19 +54,33 @@
 
     <style>
         /*
-      justify-items:
+      Deal with items in the grid:
+      justify-items: start, center, end, stretch
       align-items:
-      justify-content:
+
+      Deal with the whole grid:
+      justify-content: start, end, center, stretch, space-around, space-between
       align-content:
+
+      Allows us to overwrite above on case by case basis:
       align-self:
       justify-self:
+
       justify-* is row axis
       align-* is column axis
     */
         .container {
             display: grid;
             grid-gap: 20px;
+            grid-template-rows: repeat(5, 100px);
             grid-template-columns: repeat(10, 1fr);
+            /* justify-items: start; aligns, but item is only as wide as it needs to be */
+            /* align-items: center; need to have a height set */
+            place-items: center center; /* shorthand for justify and align */
+        }
+
+        .itm {
+            background: white;
         }
     </style>
 </body>
